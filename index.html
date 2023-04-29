@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main-player">
+
+      <div class="video-container">
+        <video src="assets/video1.mp4" id="video"></video>
+        <div class="cover" id="cover">
+          <img id="play-pause" src="assets/image/4698916_audio_media_movie_music_play_icon.png" alt="">
+        </div>
+      </div>
+      
+
+
+
+      <div class="controls">
+        <div class="left-contr">
+          <div>
+            <img id="playButton" src="assets/image/3695059_music_play_play button_player_icon.png">
+          </div>
+          <div>
+            <img id="pauseButton" src="assets/image/3695047_media player_music_pause_player_icon.png">
+          </div>
+          <div>
+              <img id="rewaindBack" src="assets/image/3695054_music_music player_player_previous_icon.png">
+          </div>
+          <div>
+              <img id="rewaindForward" src="assets/image/3695045_music_next_next button_player_icon.png">
+          </div>
+
+        </div>
+        <div class="right-contr">
+        <div>
+          <img id="soundButton" src="assets/image/2203528_lound_sound_speaker_volume_icon.png">
+          <input type="range" min="0" max="1" step="0.1" value="0.5" id="volume-control">
+      </div>
+      <div>
+        <img id="fullButton" src="assets/image/326650_fullscreen_icon.png">
+    </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="play-list">
+
+      <div class="item" id="item"> 
+        <div class="preview">
+          <p class="preview-title">Nature video 1</p>
+          <img class="poster" src="assets/image/video1.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn"  src="assets/image/3695059_music_play_play button_player_icon.png" alt=""  data-src="assets/video1.mp4">
+        </div>
+      </div>
+
+      <div class="item"id="item" > 
+        <div class="preview">
+          <p class="preview-title">Nature video 2</p>
+          <img class="poster" src="assets/image/video2.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn"  src="assets/image/3695059_music_play_play button_player_icon.png" alt="" data-src="assets/video2.mp4">
+        </div>
+      </div>
+
+      <div class="item" id="item"> 
+        <div class="preview">
+          <p class="preview-title">Nature video 3</p>
+          <img class="poster" src="assets/image/video3.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn"  src="assets/image/3695059_music_play_play button_player_icon.png" alt=""  data-src="assets/video3.mp4">
+        </div>
+      </div>
+
+      <div class="item" id="item"> 
+        <div class="preview">
+          <p class="preview-title">Nature video 4</p>
+          <img class="poster" src="assets/image/video4.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn"  src="assets/image/3695059_music_play_play button_player_icon.png" alt="" data-src="assets/video4.mp4">
+        </div>
+      </div>
+
+      <div class="item" id="item"> 
+        <div class="preview">
+          <p class="preview-title">Nature video 5</p>
+          <img class="poster" src="assets/image/video5.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn" src="assets/image/3695059_music_play_play button_player_icon.png" alt=""  data-src="assets/video5.mp4">
+        </div>
+      </div>
+
+      <!-- <div class="item"> 
+        <div class="preview">
+          <p class="preview-title">Nature video 1</p>
+          <img class="poster" src="assets/image/video2.jpg" alt="">
+        </div>
+        <div class="playlist-btn">
+          <img class="play-btn" src="assets/image/3695059_music_play_play button_player_icon.png" alt="" class="videoTrack" data-src="">
+        </div>
+      </div> -->
+      
+      <div class="prevBtn"><img src="assets/image/prev.png" alt=""></div>
+      <div class="nextBtn"><img src="assets/image/next.png" alt=""></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

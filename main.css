@@ -1,0 +1,180 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: rgb(35, 33, 33);
+
+}
+
+.container{
+  display: flex;
+}
+
+.main-player{
+  width: 70%;
+  padding: 100px 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls{
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+  padding: 5px;
+}
+
+.left-contr{
+  display: flex;
+  gap: 15px;
+}
+
+.right-contr{
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.controls img{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.video-container{
+  position: relative;
+}
+
+#video{
+  width: 100%;
+  border: 3px solid azure;
+}
+.cover{
+  width: 100%;
+  height: 99%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: azure;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ cursor: pointer;
+}
+
+.play-pause{
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+cursor: pointer;
+}
+
+#volume-control {
+  display: none;
+   height: 20px;
+  width: 100px;
+  transform: rotate(270deg);
+ position: absolute;
+ bottom: 80px;
+ right: 25px;
+
+}
+
+#soundButton:hover + #volume-control {
+  display: block;
+}
+
+#volume-control:hover{
+  display: block;
+}
+
+.cover:hover{
+  opacity: 0.5;
+}
+
+.play-list{
+  width: 30%;
+  padding-top: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item{
+  width: 200px;
+  height: auto;
+  background-color: azure;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview{
+  width: 60%;
+  background-color: rgb(35, 33, 33);
+ margin: 10px;
+}
+
+.preview-title{
+  color: #fff;
+  margin-left: 10px;
+}
+
+.poster{
+  width: 100%;
+  border: 3px solid rgb(35, 33, 33);
+}
+
+.play-btn{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.item:hover{
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.prev, .next{
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+.unactive{
+  opacity: 0.3;
+  transform: scale(0.8);
+}
+
+.prevBtn{
+position: absolute;
+top: 40px;
+left: 50%;
+transform: translateX(-50%);
+cursor: pointer;
+}
+
+.prevBtn img{
+  width: 60px;
+height: 60px;
+}
+
+.nextBtn{
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.nextBtn img{
+  width: 60px;
+  height: 60px;
+}
