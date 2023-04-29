@@ -7,25 +7,28 @@ window.onload = function () {
   $('rewaindForward').addEventListener('click', () => { v.currentTime += 10 })
   $('rewaindBack').addEventListener('click', () => { v.currentTime -= 10 })
   $('playButton').addEventListener('click', function () {
-    let playPause = document.querySelector('#play-pause');
     v.play()
-    playPause.src = 'assets/image/4719317_audio_control_music_pause_play_icon.png'
   } )
   $('pauseButton').addEventListener('click', function () {
-    let playPause = document.querySelector('#play-pause');
     v.pause()
-    playPause.src = 'assets/image/4698916_audio_media_movie_music_play_icon.png'
   } )
   $('cover').addEventListener('click', function () {
-    let playPause = document.querySelector('#play-pause');
     if (v.paused) {
       v.play();
-      playPause.src = 'assets/image/4719317_audio_control_music_pause_play_icon.png'
     } else {
       v.pause();
-      playPause.src = 'assets/image/4698916_audio_media_movie_music_play_icon.png'
     }
   })
+
+  v.addEventListener('play', function() {
+    let playPause = document.querySelector('#play-pause');
+    playPause.src = 'assets/image/4719317_audio_control_music_pause_play_icon.png';
+  });
+  
+  v.addEventListener('pause', function() {
+    let playPause = document.querySelector('#play-pause');
+    playPause.src = 'assets/image/4698916_audio_media_movie_music_play_icon.png';
+  });
 
   $('volume-control').addEventListener('input', function () {
     v.volume = this.value;
@@ -60,16 +63,7 @@ window.onload = function () {
       video.webkitRequestFullscreen();
   }
   })
-  
-  // Slider
-  // const items = document.querySelectorAll('.item');
-  // const prevBtn = document.querySelector('.prevBtn');
-  // const nextBtn = document.querySelector('.nextBtn');
-  
-  // items.forEach((item, index) => {
-  //   item.dataset.id = index;
-  //   item.style.order = index;
-  // })
+
 
   
   let playBtns = document.querySelectorAll('.play-btn')
