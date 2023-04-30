@@ -21,6 +21,7 @@ body{
 }
 
 .controls{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: azure;
@@ -46,6 +47,7 @@ body{
 
 .video-container{
   position: relative;
+  width: 100%;
 }
 
 #video{

@@ -2,7 +2,43 @@ window.onload = function () {
   let $ = function (id)
   { return document.getElementById(id) }
   
-  let v = $('video')
+  let v = $('video');
+
+  const videoList = [
+    {
+      src: 'assets/video1.mp4',
+      title: 'Video 1'
+    },
+    {
+      src: 'assets/video2.mp4',
+      title: 'Video 2'
+    },
+    {
+      src: 'assets/video3.mp4',
+      title: 'Video 3'
+    },
+    {
+      src: 'assets/video4.mp4',
+      title: 'Video 4'
+    },
+    {
+      src: 'assets/video5.mp4',
+      title: 'Video 5'
+    }
+  ];
+ 
+  let currentVideoIndex = parseInt(localStorage.getItem('currentVideoIndex')) || 0;
+  let currentVideoTime = parseFloat(localStorage.getItem('currentVideoTime')) || 0;
+  
+  v.src = videoList[currentVideoIndex].src; 
+
+  v.addEventListener('loadedmetadata', function() {
+    v.currentTime = currentVideoTime;
+  });
+  
+  v.addEventListener('pause', function() {
+    localStorage.setItem('currentVideoTime', v.currentTime);
+  });
 
   $('rewaindForward').addEventListener('click', () => { v.currentTime += 10 })
   $('rewaindBack').addEventListener('click', () => { v.currentTime -= 10 })
@@ -63,16 +99,24 @@ window.onload = function () {
       video.webkitRequestFullscreen();
   }
   })
+  const playItems = document.querySelectorAll('.item');
 
+  playItems.forEach((item, index) => {
+    item.addEventListener('click', function() {
+      currentVideoIndex = index;
+      currentVideoTime = 0;
+      video.src = videoList[currentVideoIndex].src;
+      video.play();
+      localStorage.setItem('currentVideoIndex', currentVideoIndex);
+    });
+  });
 
-  
-  let playBtns = document.querySelectorAll('.play-btn')
-  playBtns.forEach(playBtn => playBtn.addEventListener('click', function () {
-    let src = playBtn.dataset.src;
-    v.src = src
+  window.addEventListener('load', function() {
+    if (!isNaN(currentVideoIndex) && !isNaN(currentVideoTime)) {
+      v.src = videoList[currentVideoIndex].src;
       v.play();
-
-  }))
+    }
+  });
   
 }
 
